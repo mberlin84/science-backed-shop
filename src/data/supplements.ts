@@ -10,7 +10,7 @@ export const supplements: Supplement[] = [
     consistencyScore: 91,
     safetyScore: 96,
     evidenceLevel: 'Sólida',
-    summary: 'La creatina monohidrato es uno de los suplementos más estudiados y respaldados por la ciencia. Ha demostrado mejoras significativas en fuerza, potencia y rendimiento en ejercicios de alta intensidad. Su seguridad a largo plazo está bien establecida en poblaciones sanas. También muestra beneficios cognitivos emergentes.',
+    summary: 'La creatina es uno de los suplementos más estudiados. Ayuda a ganar fuerza, potencia y rendimiento en ejercicios intensos. Es segura a largo plazo y también puede mejorar la función cognitiva.',
     effectiveDose: '3–5 g/día',
     population: 'Adultos sanos, atletas, personas mayores',
     objectives: [
@@ -28,10 +28,38 @@ export const supplements: Supplement[] = [
       { id: 's5', title: 'No significant effect of creatine on endurance', doi: '10.1234/study5', year: 2022, journal: 'Med Sci Sports Exerc', type: 'RCT', sampleSize: 60, result: 'Neutro', conflictOfInterest: false },
     ],
     products: [
-      { id: 'p1', brand: 'Creapure®', concentration: '5g por dosis', form: 'Polvo micronizado', price: 24.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['NSF Certified', 'Informed Sport'], pricePerEffectiveDose: 0.28, rankingScore: 96 },
-      { id: 'p2', brand: 'Optimum Nutrition', concentration: '5g por dosis', form: 'Polvo', price: 19.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['Informed Choice'], pricePerEffectiveDose: 0.22, rankingScore: 91 },
-      { id: 'p3', brand: 'BulkSupplements', concentration: '5g por dosis', form: 'Polvo', price: 15.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: [], pricePerEffectiveDose: 0.16, rankingScore: 82 },
-      { id: 'p4', brand: 'MuscleTech', concentration: '3g por cápsula', form: 'Cápsula', price: 29.99, currency: 'USD', effectiveDoseMatch: 'Parcial', certifications: ['GMP'], pricePerEffectiveDose: 0.50, rankingScore: 68 },
+      {
+        id: 'p1', brand: 'Creapure®', concentration: '5g por dosis', form: 'Polvo micronizado', price: 24.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['NSF Certified', 'Informed Sport'], pricePerEffectiveDose: 0.28, rankingScore: 96,
+        variants: [
+          { id: 'p1v1', label: '250g (50 dosis)', concentration: '5g', form: 'Polvo', price: 24.99, currency: 'USD', inStock: true },
+          { id: 'p1v2', label: '500g (100 dosis)', concentration: '5g', form: 'Polvo', price: 42.99, currency: 'USD', inStock: true },
+          { id: 'p1v3', label: '1kg (200 dosis)', concentration: '5g', form: 'Polvo', price: 74.99, currency: 'USD', inStock: false },
+        ],
+      },
+      {
+        id: 'p2', brand: 'Optimum Nutrition', concentration: '5g por dosis', form: 'Polvo', price: 19.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['Informed Choice'], pricePerEffectiveDose: 0.22, rankingScore: 91,
+        variants: [
+          { id: 'p2v1', label: '300g', concentration: '5g', form: 'Polvo', price: 19.99, currency: 'USD', inStock: true },
+          { id: 'p2v2', label: '600g', concentration: '5g', form: 'Polvo', price: 34.99, currency: 'USD', inStock: true },
+        ],
+      },
+      {
+        id: 'p3', brand: 'BulkSupplements', concentration: '5g por dosis', form: 'Polvo', price: 15.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: [], pricePerEffectiveDose: 0.16, rankingScore: 82,
+        variants: [
+          { id: 'p3v1', label: '250g', concentration: '5g', form: 'Polvo', price: 15.99, currency: 'USD', inStock: true },
+          { id: 'p3v2', label: '1kg', concentration: '5g', form: 'Polvo', price: 39.99, currency: 'USD', inStock: true },
+        ],
+      },
+      {
+        id: 'p4', brand: 'MuscleTech', concentration: '3g por cápsula', form: 'Cápsula', price: 29.99, currency: 'USD',
+        effectiveDoseMatch: 'Parcial', certifications: ['GMP'], pricePerEffectiveDose: 0.50, rankingScore: 68,
+        variants: [
+          { id: 'p4v1', label: '120 cápsulas', concentration: '3g', form: 'Cápsula', price: 29.99, currency: 'USD', inStock: true },
+        ],
+      },
     ],
   },
   {
@@ -43,9 +71,9 @@ export const supplements: Supplement[] = [
     consistencyScore: 74,
     safetyScore: 90,
     evidenceLevel: 'Moderada',
-    summary: 'La vitamina D3 es esencial para la salud ósea y la función inmunológica. La suplementación es especialmente relevante en poblaciones con deficiencia documentada. Los beneficios para prevención de enfermedades crónicas son moderados y dependen del nivel basal. La dosis óptima varía según el individuo.',
+    summary: 'Vitamina esencial para huesos y defensas. Especialmente útil si tienes poca exposición al sol o niveles bajos confirmados. Los beneficios para otras enfermedades son más inciertos.',
     effectiveDose: '1000–4000 UI/día',
-    population: 'Adultos con deficiencia, personas mayores, población con baja exposición solar',
+    population: 'Adultos con deficiencia, personas mayores, baja exposición solar',
     objectives: [
       { objective: 'Salud ósea', studyCount: 95, positivePercent: 78, avgQuality: 7.9, consistency: 82, conclusion: 'Sólida' },
       { objective: 'Función inmune', studyCount: 42, positivePercent: 68, avgQuality: 7.2, consistency: 70, conclusion: 'Moderada' },
@@ -59,9 +87,28 @@ export const supplements: Supplement[] = [
       { id: 's8', title: 'High-dose vitamin D and cardiovascular outcomes', doi: '10.1234/study8', year: 2023, journal: 'NEJM', type: 'RCT', sampleSize: 2500, result: 'Neutro', conflictOfInterest: false },
     ],
     products: [
-      { id: 'p5', brand: 'NOW Foods', concentration: '2000 UI', form: 'Cápsula blanda', price: 12.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Non-GMO'], pricePerEffectiveDose: 0.07, rankingScore: 93 },
-      { id: 'p6', brand: 'Solgar', concentration: '4000 UI', form: 'Cápsula blanda', price: 18.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Kosher'], pricePerEffectiveDose: 0.10, rankingScore: 90 },
-      { id: 'p7', brand: 'NatureMade', concentration: '1000 UI', form: 'Tableta', price: 8.99, currency: 'USD', effectiveDoseMatch: 'Parcial', certifications: ['USP Verified'], pricePerEffectiveDose: 0.06, rankingScore: 85 },
+      {
+        id: 'p5', brand: 'NOW Foods', concentration: '2000 UI', form: 'Cápsula blanda', price: 12.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Non-GMO'], pricePerEffectiveDose: 0.07, rankingScore: 93,
+        variants: [
+          { id: 'p5v1', label: '120 cápsulas', concentration: '2000 UI', form: 'Cápsula blanda', price: 12.99, currency: 'USD', inStock: true },
+          { id: 'p5v2', label: '240 cápsulas', concentration: '2000 UI', form: 'Cápsula blanda', price: 21.99, currency: 'USD', inStock: true },
+        ],
+      },
+      {
+        id: 'p6', brand: 'Solgar', concentration: '4000 UI', form: 'Cápsula blanda', price: 18.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Kosher'], pricePerEffectiveDose: 0.10, rankingScore: 90,
+        variants: [
+          { id: 'p6v1', label: '60 cápsulas', concentration: '4000 UI', form: 'Cápsula blanda', price: 18.99, currency: 'USD', inStock: true },
+        ],
+      },
+      {
+        id: 'p7', brand: 'NatureMade', concentration: '1000 UI', form: 'Tableta', price: 8.99, currency: 'USD',
+        effectiveDoseMatch: 'Parcial', certifications: ['USP Verified'], pricePerEffectiveDose: 0.06, rankingScore: 85,
+        variants: [
+          { id: 'p7v1', label: '100 tabletas', concentration: '1000 UI', form: 'Tableta', price: 8.99, currency: 'USD', inStock: true },
+        ],
+      },
     ],
   },
   {
@@ -73,11 +120,11 @@ export const supplements: Supplement[] = [
     consistencyScore: 62,
     safetyScore: 78,
     evidenceLevel: 'Moderada',
-    summary: 'Ashwagandha, especialmente el extracto estandarizado KSM-66, muestra efectos moderados en reducción de cortisol y estrés percibido. La evidencia para rendimiento deportivo y testosterona es más limitada y con mayor variabilidad. Se recomienda cautela y consulta médica en uso prolongado.',
+    summary: 'Puede ayudar a reducir el estrés y mejorar el sueño. Para rendimiento deportivo y testosterona la evidencia es más débil. Se recomienda consultar con un profesional para uso prolongado.',
     effectiveDose: '300–600 mg/día (extracto estandarizado)',
     population: 'Adultos con estrés crónico, atletas recreacionales',
     objectives: [
-      { objective: 'Reducción de estrés/cortisol', studyCount: 24, positivePercent: 75, avgQuality: 6.8, consistency: 72, conclusion: 'Moderada' },
+      { objective: 'Reducción de estrés', studyCount: 24, positivePercent: 75, avgQuality: 6.8, consistency: 72, conclusion: 'Moderada' },
       { objective: 'Rendimiento deportivo', studyCount: 12, positivePercent: 58, avgQuality: 6.2, consistency: 55, conclusion: 'Limitada' },
       { objective: 'Testosterona', studyCount: 8, positivePercent: 50, avgQuality: 5.8, consistency: 48, conclusion: 'Limitada' },
       { objective: 'Calidad del sueño', studyCount: 10, positivePercent: 70, avgQuality: 6.5, consistency: 65, conclusion: 'Moderada' },
@@ -89,8 +136,21 @@ export const supplements: Supplement[] = [
       { id: 's11', title: 'No effect of ashwagandha on testosterone in healthy males', doi: '10.1234/study11', year: 2023, journal: 'Phytother Res', type: 'RCT', sampleSize: 80, result: 'Neutro', conflictOfInterest: false },
     ],
     products: [
-      { id: 'p8', brand: 'KSM-66 by Ixoreal', concentration: '600 mg', form: 'Cápsula', price: 22.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Organic'], pricePerEffectiveDose: 0.38, rankingScore: 88 },
-      { id: 'p9', brand: 'Jarrow Formulas', concentration: '300 mg', form: 'Cápsula', price: 14.99, currency: 'USD', effectiveDoseMatch: 'Parcial', certifications: ['GMP'], pricePerEffectiveDose: 0.50, rankingScore: 72 },
+      {
+        id: 'p8', brand: 'KSM-66 by Ixoreal', concentration: '600 mg', form: 'Cápsula', price: 22.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Organic'], pricePerEffectiveDose: 0.38, rankingScore: 88,
+        variants: [
+          { id: 'p8v1', label: '60 cápsulas', concentration: '600 mg', form: 'Cápsula', price: 22.99, currency: 'USD', inStock: true },
+          { id: 'p8v2', label: '120 cápsulas', concentration: '600 mg', form: 'Cápsula', price: 39.99, currency: 'USD', inStock: true },
+        ],
+      },
+      {
+        id: 'p9', brand: 'Jarrow Formulas', concentration: '300 mg', form: 'Cápsula', price: 14.99, currency: 'USD',
+        effectiveDoseMatch: 'Parcial', certifications: ['GMP'], pricePerEffectiveDose: 0.50, rankingScore: 72,
+        variants: [
+          { id: 'p9v1', label: '60 cápsulas', concentration: '300 mg', form: 'Cápsula', price: 14.99, currency: 'USD', inStock: true },
+        ],
+      },
     ],
   },
   {
@@ -102,7 +162,7 @@ export const supplements: Supplement[] = [
     consistencyScore: 70,
     safetyScore: 92,
     evidenceLevel: 'Moderada',
-    summary: 'Los ácidos grasos omega-3 (EPA y DHA) tienen evidencia sólida para salud cardiovascular y triglicéridos. Los beneficios para cognición y salud mental son moderados. La calidad del producto (concentración de EPA/DHA, pureza) varía significativamente entre marcas.',
+    summary: 'Los omega-3 ayudan a reducir triglicéridos y cuidar el corazón. Para el cerebro y el ánimo los resultados son más variados. La calidad del producto importa mucho: busca alta concentración de EPA/DHA.',
     effectiveDose: '1–3 g EPA+DHA/día',
     population: 'Adultos, pacientes cardiovasculares, embarazadas',
     objectives: [
@@ -117,8 +177,22 @@ export const supplements: Supplement[] = [
       { id: 's13', title: 'EPA supplementation and cardiovascular events', doi: '10.1234/study13', year: 2022, journal: 'NEJM', type: 'RCT', sampleSize: 8000, result: 'Positivo', conflictOfInterest: true },
     ],
     products: [
-      { id: 'p10', brand: 'Nordic Naturals', concentration: '1100 mg EPA+DHA', form: 'Cápsula blanda', price: 34.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['IFOS 5-Star', 'Non-GMO'], pricePerEffectiveDose: 0.58, rankingScore: 94 },
-      { id: 'p11', brand: 'Carlson Labs', concentration: '1600 mg EPA+DHA', form: 'Líquido', price: 29.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['IFOS 5-Star', 'NSF'], pricePerEffectiveDose: 0.50, rankingScore: 92 },
+      {
+        id: 'p10', brand: 'Nordic Naturals', concentration: '1100 mg EPA+DHA', form: 'Cápsula blanda', price: 34.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['IFOS 5-Star', 'Non-GMO'], pricePerEffectiveDose: 0.58, rankingScore: 94,
+        variants: [
+          { id: 'p10v1', label: '60 cápsulas', concentration: '1100 mg', form: 'Cápsula blanda', price: 34.99, currency: 'USD', inStock: true },
+          { id: 'p10v2', label: '120 cápsulas', concentration: '1100 mg', form: 'Cápsula blanda', price: 59.99, currency: 'USD', inStock: true },
+        ],
+      },
+      {
+        id: 'p11', brand: 'Carlson Labs', concentration: '1600 mg EPA+DHA', form: 'Líquido', price: 29.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['IFOS 5-Star', 'NSF'], pricePerEffectiveDose: 0.50, rankingScore: 92,
+        variants: [
+          { id: 'p11v1', label: '200 ml', concentration: '1600 mg', form: 'Líquido', price: 29.99, currency: 'USD', inStock: true },
+          { id: 'p11v2', label: '500 ml', concentration: '1600 mg', form: 'Líquido', price: 54.99, currency: 'USD', inStock: true },
+        ],
+      },
     ],
   },
   {
@@ -130,7 +204,7 @@ export const supplements: Supplement[] = [
     consistencyScore: 48,
     safetyScore: 82,
     evidenceLevel: 'Inconsistente',
-    summary: 'La curcumina muestra resultados inconsistentes en la literatura científica. Si bien algunos estudios individuales reportan efectos antiinflamatorios, los meta-análisis más rigurosos muestran efectos pequeños y alta variabilidad. La biodisponibilidad es un problema persistente. Muchos estudios tienen conflictos de interés.',
+    summary: 'Los resultados científicos son contradictorios. Algunos estudios muestran efectos antiinflamatorios leves, pero la evidencia general es débil. La absorción es un problema clave. Muchos estudios tienen conflictos de interés.',
     effectiveDose: '500–1500 mg/día (con potenciador de absorción)',
     population: 'Adultos con dolor articular, inflamación crónica',
     objectives: [
@@ -144,8 +218,21 @@ export const supplements: Supplement[] = [
       { id: 's15', title: 'Bioavailable curcumin and joint pain in osteoarthritis', doi: '10.1234/study15', year: 2022, journal: 'Arthritis Res Ther', type: 'RCT', sampleSize: 140, result: 'Positivo', conflictOfInterest: true },
     ],
     products: [
-      { id: 'p12', brand: 'Meriva (Thorne)', concentration: '1000 mg', form: 'Cápsula (fitosoma)', price: 38.99, currency: 'USD', effectiveDoseMatch: 'Sí', certifications: ['NSF', 'GMP'], pricePerEffectiveDose: 0.65, rankingScore: 78 },
-      { id: 'p13', brand: 'Generic Turmeric', concentration: '500 mg', form: 'Cápsula', price: 9.99, currency: 'USD', effectiveDoseMatch: 'No', certifications: [], pricePerEffectiveDose: 0.33, rankingScore: 35 },
+      {
+        id: 'p12', brand: 'Meriva (Thorne)', concentration: '1000 mg', form: 'Cápsula (fitosoma)', price: 38.99, currency: 'USD',
+        effectiveDoseMatch: 'Sí', certifications: ['NSF', 'GMP'], pricePerEffectiveDose: 0.65, rankingScore: 78,
+        variants: [
+          { id: 'p12v1', label: '60 cápsulas', concentration: '1000 mg', form: 'Cápsula', price: 38.99, currency: 'USD', inStock: true },
+          { id: 'p12v2', label: '120 cápsulas', concentration: '1000 mg', form: 'Cápsula', price: 69.99, currency: 'USD', inStock: true },
+        ],
+      },
+      {
+        id: 'p13', brand: 'Generic Turmeric', concentration: '500 mg', form: 'Cápsula', price: 9.99, currency: 'USD',
+        effectiveDoseMatch: 'No', certifications: [], pricePerEffectiveDose: 0.33, rankingScore: 35,
+        variants: [
+          { id: 'p13v1', label: '90 cápsulas', concentration: '500 mg', form: 'Cápsula', price: 9.99, currency: 'USD', inStock: true },
+        ],
+      },
     ],
   },
 ];
