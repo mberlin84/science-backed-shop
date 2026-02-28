@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supplements } from '@/data/supplements';
 import { EvidenceBadge } from '@/components/EvidenceBadge';
+import { CartButton } from '@/components/CartButton';
 import { Search, Beaker, Shield, TrendingUp, BarChart3 } from 'lucide-react';
 
 type SortKey = 'methodology' | 'safety' | 'consistency' | 'benefit-risk';
@@ -30,6 +31,9 @@ export default function Index() {
       {/* Hero */}
       <header className="border-b border-border bg-card">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+          <div className="flex justify-end mb-4">
+            <CartButton />
+          </div>
           <div className="max-w-2xl">
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground leading-tight">
               Supplement<br />Evidence Engine

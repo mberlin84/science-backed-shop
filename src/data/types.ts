@@ -29,6 +29,16 @@ export interface ConsistencyAnalysis {
   conflictPenalty: number;
 }
 
+export interface ProductVariant {
+  id: string;
+  label: string;
+  concentration: string;
+  form: string;
+  price: number;
+  currency: string;
+  inStock: boolean;
+}
+
 export interface Product {
   id: string;
   brand: string;
@@ -40,6 +50,8 @@ export interface Product {
   certifications: string[];
   pricePerEffectiveDose: number;
   rankingScore: number;
+  variants: ProductVariant[];
+  imageUrl?: string;
 }
 
 export interface Supplement {
@@ -58,4 +70,16 @@ export interface Supplement {
   products: Product[];
   effectiveDose: string;
   population: string;
+}
+
+export interface CartItem {
+  productId: string;
+  variantId: string;
+  brand: string;
+  variantLabel: string;
+  price: number;
+  currency: string;
+  quantity: number;
+  supplementName: string;
+  supplementSlug: string;
 }

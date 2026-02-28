@@ -1,39 +1,36 @@
 import { EvidenceObjective } from '@/data/types';
 import { EvidenceBadge } from './EvidenceBadge';
+import { CheckCircle2, Circle, XCircle } from 'lucide-react';
 
 interface EvidenceMatrixProps {
   objectives: EvidenceObjective[];
 }
 
+function getEffectivenessIcon(percent: number) {
+  if (percent >= 70) return <CheckCircle2 className="w-4 h-4 text-score-high" />;
+  if (percent >= 50) return <Circle className="w-4 h-4 text-score-medium" />;
+  return <XCircle className="w-4 h-4 text-score-low" />;
+}
+
 export function EvidenceMatrix({ objectives }: EvidenceMatrixProps) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="border-b border-border">
-            <th className="text-left py-3 px-4 font-semibold text-muted-foreground">Objetivo</th>
-            <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Nº Estudios</th>
-            <th className="text-center py-3 px-4 font-semibold text-muted-foreground">% Positivos</th>
-            <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Calidad Prom.</th>
-            <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Consistencia</th>
-            <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Conclusión</th>
-          </tr>
-        </thead>
-        <tbody>
-          {objectives.map((obj) => (
-            <tr key={obj.objective} className="border-b border-border/50 hover:bg-muted/50 transition-colors">
-              <td className="py-3 px-4 font-medium text-foreground">{obj.objective}</td>
-              <td className="py-3 px-4 text-center font-mono">{obj.studyCount}</td>
-              <td className="py-3 px-4 text-center font-mono">{obj.positivePercent}%</td>
-              <td className="py-3 px-4 text-center font-mono">{obj.avgQuality.toFixed(1)}</td>
-              <td className="py-3 px-4 text-center font-mono">{obj.consistency}%</td>
-              <td className="py-3 px-4 text-center">
-                <EvidenceBadge level={obj.conclusion} size="sm" />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="space-y-3">
+      {objectives.map((obj) => (
+        <div key={obj.objective} className="p-4 rounded-lg border border-border bg-card hover:bg-muted/30 transition-colors">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              {getEffectivenessIcon(obj.positivePercent)}
+              <div>
+                <p className="font-medium text-foreground text-sm">{obj.objective}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {obj.studyCount} estudios · {obj.positivePercent}% con resultados positivos
+                </p>
+              </div>
+            </div>
+            <EvidenceBadge level={obj.conclusion} size="sm" />
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { ConsistencyAnalysis as ConsistencyType } from '@/data/types';
+import { AlertTriangle, CheckCircle2, Info } from 'lucide-react';
 
 interface ConsistencyAnalysisProps {
   data: ConsistencyType;
@@ -6,16 +7,19 @@ interface ConsistencyAnalysisProps {
 
 export function ConsistencyAnalysis({ data }: ConsistencyAnalysisProps) {
   const bars = [
-    { label: 'Positivos', value: data.positivePercent, color: 'bg-score-high' },
-    { label: 'Neutros', value: data.neutralPercent, color: 'bg-score-medium' },
-    { label: 'Negativos', value: data.negativePercent, color: 'bg-score-low' },
+    { label: 'Resultados a favor', value: data.positivePercent, color: 'bg-score-high' },
+    { label: 'Sin efecto claro', value: data.neutralPercent, color: 'bg-score-medium' },
+    { label: 'Resultados en contra', value: data.negativePercent, color: 'bg-score-low' },
   ];
 
+  const reliabilityLevel = data.metaVsRctDiff <= 5 ? 'alta' : data.metaVsRctDiff <= 15 ? 'moderada' : 'baja';
+  const conflictLevel = data.conflictPenalty <= 3 ? 'bajo' : data.conflictPenalty <= 10 ? 'moderado' : 'alto';
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
+      {/* Visual bar */}
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Distribución de Resultados</h4>
-        <div className="flex h-6 rounded-full overflow-hidden bg-muted">
+        <div className="flex h-5 rounded-full overflow-hidden bg-muted">
           {bars.map((bar) => (
             <div
               key={bar.label}
@@ -25,32 +29,46 @@ export function ConsistencyAnalysis({ data }: ConsistencyAnalysisProps) {
             />
           ))}
         </div>
-        <div className="flex gap-6 text-sm">
+        <div className="flex flex-wrap gap-4 text-sm">
           {bars.map((bar) => (
             <div key={bar.label} className="flex items-center gap-2">
-              <div className={`w-3 h-3 rounded-full ${bar.color}`} />
-              <span className="text-muted-foreground">{bar.label}</span>
-              <span className="font-mono font-semibold">{bar.value}%</span>
+              <div className={`w-2.5 h-2.5 rounded-full ${bar.color}`} />
+              <span className="text-muted-foreground text-xs">{bar.label}</span>
+              <span className="font-mono text-xs font-semibold">{bar.value}%</span>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div className="p-4 rounded-lg bg-muted/50">
-          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Δ Meta-análisis vs RCT</p>
-          <p className="font-mono text-2xl font-bold text-foreground">{data.metaVsRctDiff}%</p>
-          <p className="text-xs text-muted-foreground mt-1">
-            {data.metaVsRctDiff <= 5 ? 'Consistente' : data.metaVsRctDiff <= 15 ? 'Divergencia moderada' : 'Divergencia alta'}
+      {/* Simple insights */}
+      <div className="space-y-2">
+        <div className="flex items-start gap-2.5 p-3 rounded-lg bg-muted/50">
+          {reliabilityLevel === 'alta' ? (
+            <CheckCircle2 className="w-4 h-4 text-score-high shrink-0 mt-0.5" />
+          ) : reliabilityLevel === 'baja' ? (
+            <AlertTriangle className="w-4 h-4 text-score-low shrink-0 mt-0.5" />
+          ) : (
+            <Info className="w-4 h-4 text-score-medium shrink-0 mt-0.5" />
+          )}
+          <p className="text-sm text-foreground">
+            <span className="font-medium">Fiabilidad {reliabilityLevel}:</span>{' '}
+            {reliabilityLevel === 'alta'
+              ? 'Los estudios grandes y pequeños muestran resultados similares.'
+              : reliabilityLevel === 'moderada'
+              ? 'Hay cierta diferencia entre estudios grandes y pequeños.'
+              : 'Los resultados varían mucho según el tipo de estudio.'}
           </p>
         </div>
-        <div className="p-4 rounded-lg bg-muted/50">
-          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Penalización conflictos</p>
-          <p className="font-mono text-2xl font-bold text-foreground">-{data.conflictPenalty}pts</p>
-          <p className="text-xs text-muted-foreground mt-1">
-            {data.conflictPenalty <= 3 ? 'Bajo impacto' : data.conflictPenalty <= 10 ? 'Impacto moderado' : 'Alto impacto'}
-          </p>
-        </div>
+
+        {data.conflictPenalty > 3 && (
+          <div className="flex items-start gap-2.5 p-3 rounded-lg bg-muted/50">
+            <AlertTriangle className="w-4 h-4 text-score-low shrink-0 mt-0.5" />
+            <p className="text-sm text-foreground">
+              <span className="font-medium">Independencia {conflictLevel === 'alto' ? 'preocupante' : 'a considerar'}:</span>{' '}
+              Algunos estudios fueron financiados por marcas de suplementos.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
