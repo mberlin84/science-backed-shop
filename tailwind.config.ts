@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"DM Serif Display"', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +52,27 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        evidence: {
+          solid: "hsl(var(--evidence-solid))",
+          "solid-bg": "hsl(var(--evidence-solid-bg))",
+          moderate: "hsl(var(--evidence-moderate))",
+          "moderate-bg": "hsl(var(--evidence-moderate-bg))",
+          limited: "hsl(var(--evidence-limited))",
+          "limited-bg": "hsl(var(--evidence-limited-bg))",
+          inconsistent: "hsl(var(--evidence-inconsistent))",
+          "inconsistent-bg": "hsl(var(--evidence-inconsistent-bg))",
+        },
+        score: {
+          high: "hsl(var(--score-high))",
+          medium: "hsl(var(--score-medium))",
+          low: "hsl(var(--score-low))",
+        },
+        marketplace: {
+          bg: "hsl(var(--marketplace-bg))",
+          aligned: "hsl(var(--marketplace-aligned))",
+          partial: "hsl(var(--marketplace-partial))",
+          misaligned: "hsl(var(--marketplace-misaligned))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,25 +91,27 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "score-fill": {
+          from: { width: "0%" },
+          to: { width: "var(--score-width)" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(12px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "score-fill": "score-fill 1s ease-out forwards",
+        "fade-up": "fade-up 0.5s ease-out forwards",
       },
     },
   },
