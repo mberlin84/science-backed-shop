@@ -7,6 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { CartDrawer } from "@/components/CartDrawer";
 import Index from "./pages/Index";
 import SupplementDetail from "./pages/SupplementDetail";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/suplemento/:slug" element={<SupplementDetail />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -72,10 +72,11 @@ export function CartDrawer() {
                 <span className="font-mono text-xl font-bold text-foreground">${totalPrice.toFixed(2)}</span>
               </div>
               <p className="text-xs text-muted-foreground">Impuestos y envío calculados al finalizar</p>
-              <Button className="w-full" size="lg" disabled>
-                Finalizar compra (próximamente)
-              </Button>
-              <p className="text-xs text-center text-muted-foreground">Checkout con MedusaJS — próximamente</p>
+              <Link to="/checkout" onClick={() => setIsOpen(false)}>
+                <Button className="w-full" size="lg">
+                  Finalizar compra
+                </Button>
+              </Link>
             </div>
           </>
         )}
