@@ -1,5 +1,11 @@
 import { Supplement } from './types';
 
+const placeholderImages = [
+  'https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=400&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop',
+];
+
 export const supplements: Supplement[] = [
   {
     id: '1',
@@ -31,33 +37,41 @@ export const supplements: Supplement[] = [
       {
         id: 'p1', brand: 'Creapure®', concentration: '5g por dosis', form: 'Polvo micronizado', price: 24.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['NSF Certified', 'Informed Sport'], pricePerEffectiveDose: 0.28, rankingScore: 96,
+        images: placeholderImages,
+        seller: { id: 'seller1', name: 'NutriPro Store', rating: 4.8, totalSales: 12400 },
         variants: [
-          { id: 'p1v1', label: '250g (50 dosis)', concentration: '5g', form: 'Polvo', price: 24.99, currency: 'USD', inStock: true },
-          { id: 'p1v2', label: '500g (100 dosis)', concentration: '5g', form: 'Polvo', price: 42.99, currency: 'USD', inStock: true },
-          { id: 'p1v3', label: '1kg (200 dosis)', concentration: '5g', form: 'Polvo', price: 74.99, currency: 'USD', inStock: false },
+          { id: 'p1v1', label: '250g (50 dosis)', concentration: '5g', form: 'Polvo', price: 24.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.50 },
+          { id: 'p1v2', label: '500g (100 dosis)', concentration: '5g', form: 'Polvo', price: 42.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.43 },
+          { id: 'p1v3', label: '1kg (200 dosis)', concentration: '5g', form: 'Polvo', price: 74.99, currency: 'USD', inStock: false, pricePerEffectiveDose: 0.37 },
         ],
       },
       {
         id: 'p2', brand: 'Optimum Nutrition', concentration: '5g por dosis', form: 'Polvo', price: 19.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['Informed Choice'], pricePerEffectiveDose: 0.22, rankingScore: 91,
+        images: placeholderImages,
+        seller: { id: 'seller2', name: 'FitMarket', rating: 4.6, totalSales: 8900 },
         variants: [
-          { id: 'p2v1', label: '300g', concentration: '5g', form: 'Polvo', price: 19.99, currency: 'USD', inStock: true },
-          { id: 'p2v2', label: '600g', concentration: '5g', form: 'Polvo', price: 34.99, currency: 'USD', inStock: true },
+          { id: 'p2v1', label: '300g', concentration: '5g', form: 'Polvo', price: 19.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.33 },
+          { id: 'p2v2', label: '600g', concentration: '5g', form: 'Polvo', price: 34.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.29 },
         ],
       },
       {
         id: 'p3', brand: 'BulkSupplements', concentration: '5g por dosis', form: 'Polvo', price: 15.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: [], pricePerEffectiveDose: 0.16, rankingScore: 82,
+        images: placeholderImages,
+        seller: { id: 'seller3', name: 'Bulk Direct', rating: 4.3, totalSales: 5600 },
         variants: [
-          { id: 'p3v1', label: '250g', concentration: '5g', form: 'Polvo', price: 15.99, currency: 'USD', inStock: true },
-          { id: 'p3v2', label: '1kg', concentration: '5g', form: 'Polvo', price: 39.99, currency: 'USD', inStock: true },
+          { id: 'p3v1', label: '250g', concentration: '5g', form: 'Polvo', price: 15.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.32 },
+          { id: 'p3v2', label: '1kg', concentration: '5g', form: 'Polvo', price: 39.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.20 },
         ],
       },
       {
         id: 'p4', brand: 'MuscleTech', concentration: '3g por cápsula', form: 'Cápsula', price: 29.99, currency: 'USD',
         effectiveDoseMatch: 'Parcial', certifications: ['GMP'], pricePerEffectiveDose: 0.50, rankingScore: 68,
+        images: placeholderImages,
+        seller: { id: 'seller4', name: 'SupplementKing', rating: 4.1, totalSales: 3200 },
         variants: [
-          { id: 'p4v1', label: '120 cápsulas', concentration: '3g', form: 'Cápsula', price: 29.99, currency: 'USD', inStock: true },
+          { id: 'p4v1', label: '120 cápsulas', concentration: '3g', form: 'Cápsula', price: 29.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.50 },
         ],
       },
     ],
@@ -90,23 +104,29 @@ export const supplements: Supplement[] = [
       {
         id: 'p5', brand: 'NOW Foods', concentration: '2000 UI', form: 'Cápsula blanda', price: 12.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Non-GMO'], pricePerEffectiveDose: 0.07, rankingScore: 93,
+        images: placeholderImages,
+        seller: { id: 'seller5', name: 'VitaShop', rating: 4.7, totalSales: 15200 },
         variants: [
-          { id: 'p5v1', label: '120 cápsulas', concentration: '2000 UI', form: 'Cápsula blanda', price: 12.99, currency: 'USD', inStock: true },
-          { id: 'p5v2', label: '240 cápsulas', concentration: '2000 UI', form: 'Cápsula blanda', price: 21.99, currency: 'USD', inStock: true },
+          { id: 'p5v1', label: '120 cápsulas', concentration: '2000 UI', form: 'Cápsula blanda', price: 12.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.11 },
+          { id: 'p5v2', label: '240 cápsulas', concentration: '2000 UI', form: 'Cápsula blanda', price: 21.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.09 },
         ],
       },
       {
         id: 'p6', brand: 'Solgar', concentration: '4000 UI', form: 'Cápsula blanda', price: 18.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Kosher'], pricePerEffectiveDose: 0.10, rankingScore: 90,
+        images: placeholderImages,
+        seller: { id: 'seller6', name: 'HealthFirst', rating: 4.5, totalSales: 7800 },
         variants: [
-          { id: 'p6v1', label: '60 cápsulas', concentration: '4000 UI', form: 'Cápsula blanda', price: 18.99, currency: 'USD', inStock: true },
+          { id: 'p6v1', label: '60 cápsulas', concentration: '4000 UI', form: 'Cápsula blanda', price: 18.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.32 },
         ],
       },
       {
         id: 'p7', brand: 'NatureMade', concentration: '1000 UI', form: 'Tableta', price: 8.99, currency: 'USD',
         effectiveDoseMatch: 'Parcial', certifications: ['USP Verified'], pricePerEffectiveDose: 0.06, rankingScore: 85,
+        images: placeholderImages,
+        seller: { id: 'seller7', name: 'NaturalHub', rating: 4.4, totalSales: 6100 },
         variants: [
-          { id: 'p7v1', label: '100 tabletas', concentration: '1000 UI', form: 'Tableta', price: 8.99, currency: 'USD', inStock: true },
+          { id: 'p7v1', label: '100 tabletas', concentration: '1000 UI', form: 'Tableta', price: 8.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.09 },
         ],
       },
     ],
@@ -139,16 +159,20 @@ export const supplements: Supplement[] = [
       {
         id: 'p8', brand: 'KSM-66 by Ixoreal', concentration: '600 mg', form: 'Cápsula', price: 22.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['GMP', 'Organic'], pricePerEffectiveDose: 0.38, rankingScore: 88,
+        images: placeholderImages,
+        seller: { id: 'seller8', name: 'AdaptoGen Co', rating: 4.6, totalSales: 4300 },
         variants: [
-          { id: 'p8v1', label: '60 cápsulas', concentration: '600 mg', form: 'Cápsula', price: 22.99, currency: 'USD', inStock: true },
-          { id: 'p8v2', label: '120 cápsulas', concentration: '600 mg', form: 'Cápsula', price: 39.99, currency: 'USD', inStock: true },
+          { id: 'p8v1', label: '60 cápsulas', concentration: '600 mg', form: 'Cápsula', price: 22.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.38 },
+          { id: 'p8v2', label: '120 cápsulas', concentration: '600 mg', form: 'Cápsula', price: 39.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.33 },
         ],
       },
       {
         id: 'p9', brand: 'Jarrow Formulas', concentration: '300 mg', form: 'Cápsula', price: 14.99, currency: 'USD',
         effectiveDoseMatch: 'Parcial', certifications: ['GMP'], pricePerEffectiveDose: 0.50, rankingScore: 72,
+        images: placeholderImages,
+        seller: { id: 'seller9', name: 'WellnessPlus', rating: 4.2, totalSales: 2800 },
         variants: [
-          { id: 'p9v1', label: '60 cápsulas', concentration: '300 mg', form: 'Cápsula', price: 14.99, currency: 'USD', inStock: true },
+          { id: 'p9v1', label: '60 cápsulas', concentration: '300 mg', form: 'Cápsula', price: 14.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.50 },
         ],
       },
     ],
@@ -180,17 +204,21 @@ export const supplements: Supplement[] = [
       {
         id: 'p10', brand: 'Nordic Naturals', concentration: '1100 mg EPA+DHA', form: 'Cápsula blanda', price: 34.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['IFOS 5-Star', 'Non-GMO'], pricePerEffectiveDose: 0.58, rankingScore: 94,
+        images: placeholderImages,
+        seller: { id: 'seller10', name: 'OmegaVita', rating: 4.9, totalSales: 18700 },
         variants: [
-          { id: 'p10v1', label: '60 cápsulas', concentration: '1100 mg', form: 'Cápsula blanda', price: 34.99, currency: 'USD', inStock: true },
-          { id: 'p10v2', label: '120 cápsulas', concentration: '1100 mg', form: 'Cápsula blanda', price: 59.99, currency: 'USD', inStock: true },
+          { id: 'p10v1', label: '60 cápsulas', concentration: '1100 mg', form: 'Cápsula blanda', price: 34.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.58 },
+          { id: 'p10v2', label: '120 cápsulas', concentration: '1100 mg', form: 'Cápsula blanda', price: 59.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.50 },
         ],
       },
       {
         id: 'p11', brand: 'Carlson Labs', concentration: '1600 mg EPA+DHA', form: 'Líquido', price: 29.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['IFOS 5-Star', 'NSF'], pricePerEffectiveDose: 0.50, rankingScore: 92,
+        images: placeholderImages,
+        seller: { id: 'seller11', name: 'PureHealth MX', rating: 4.5, totalSales: 6400 },
         variants: [
-          { id: 'p11v1', label: '200 ml', concentration: '1600 mg', form: 'Líquido', price: 29.99, currency: 'USD', inStock: true },
-          { id: 'p11v2', label: '500 ml', concentration: '1600 mg', form: 'Líquido', price: 54.99, currency: 'USD', inStock: true },
+          { id: 'p11v1', label: '200 ml', concentration: '1600 mg', form: 'Líquido', price: 29.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.75 },
+          { id: 'p11v2', label: '500 ml', concentration: '1600 mg', form: 'Líquido', price: 54.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.55 },
         ],
       },
     ],
@@ -221,16 +249,20 @@ export const supplements: Supplement[] = [
       {
         id: 'p12', brand: 'Meriva (Thorne)', concentration: '1000 mg', form: 'Cápsula (fitosoma)', price: 38.99, currency: 'USD',
         effectiveDoseMatch: 'Sí', certifications: ['NSF', 'GMP'], pricePerEffectiveDose: 0.65, rankingScore: 78,
+        images: placeholderImages,
+        seller: { id: 'seller12', name: 'ThorneOfficial', rating: 4.8, totalSales: 9200 },
         variants: [
-          { id: 'p12v1', label: '60 cápsulas', concentration: '1000 mg', form: 'Cápsula', price: 38.99, currency: 'USD', inStock: true },
-          { id: 'p12v2', label: '120 cápsulas', concentration: '1000 mg', form: 'Cápsula', price: 69.99, currency: 'USD', inStock: true },
+          { id: 'p12v1', label: '60 cápsulas', concentration: '1000 mg', form: 'Cápsula', price: 38.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.65 },
+          { id: 'p12v2', label: '120 cápsulas', concentration: '1000 mg', form: 'Cápsula', price: 69.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.58 },
         ],
       },
       {
         id: 'p13', brand: 'Generic Turmeric', concentration: '500 mg', form: 'Cápsula', price: 9.99, currency: 'USD',
         effectiveDoseMatch: 'No', certifications: [], pricePerEffectiveDose: 0.33, rankingScore: 35,
+        images: placeholderImages,
+        seller: { id: 'seller13', name: 'BudgetSupps', rating: 3.8, totalSales: 1200 },
         variants: [
-          { id: 'p13v1', label: '90 cápsulas', concentration: '500 mg', form: 'Cápsula', price: 9.99, currency: 'USD', inStock: true },
+          { id: 'p13v1', label: '90 cápsulas', concentration: '500 mg', form: 'Cápsula', price: 9.99, currency: 'USD', inStock: true, pricePerEffectiveDose: 0.33 },
         ],
       },
     ],

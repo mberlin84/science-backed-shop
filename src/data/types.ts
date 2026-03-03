@@ -37,6 +37,14 @@ export interface ProductVariant {
   price: number;
   currency: string;
   inStock: boolean;
+  pricePerEffectiveDose: number;
+}
+
+export interface Seller {
+  id: string;
+  name: string;
+  rating: number;
+  totalSales: number;
 }
 
 export interface Product {
@@ -51,7 +59,8 @@ export interface Product {
   pricePerEffectiveDose: number;
   rankingScore: number;
   variants: ProductVariant[];
-  imageUrl?: string;
+  images: string[];
+  seller: Seller;
 }
 
 export interface Supplement {
