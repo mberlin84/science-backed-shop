@@ -18,14 +18,30 @@ export function RoyalWaxSealCard({ data }: Props) {
         aria-label={open ? "Cerrar invitación" : "Abrir invitación"}
       >
         <div
-          className={`absolute inset-x-3 transition-all duration-700 ease-out ${
-            open ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
+          className="absolute inset-0 rounded-sm shadow-2xl overflow-hidden"
           style={{
-            top: "6%",
-            height: "90%",
-            zIndex: 20,
-            transitionDelay: open ? "450ms" : "0ms",
+            zIndex: 0,
+            background:
+              "linear-gradient(135deg, #e9d3a9 0%, #d4b576 50%, #b8954c 100%)",
+          }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 50%, rgba(80,55,15,0.18) 0%, transparent 65%)",
+            }}
+          />
+        </div>
+
+        <div
+          className="absolute inset-x-2 transition-all duration-700 ease-out"
+          style={{
+            top: open ? "3%" : "30%",
+            height: "92%",
+            zIndex: 10,
+            opacity: open ? 1 : 0,
+            transitionDelay: open ? "400ms" : "0ms",
           }}
         >
           <div className="w-full h-full bg-[#fef9ec] rounded-sm shadow-2xl border border-[#d4af37]/40 p-2">
@@ -68,30 +84,24 @@ export function RoyalWaxSealCard({ data }: Props) {
         </div>
 
         <div
-          className="absolute inset-x-0 bottom-0 rounded-b-sm shadow-xl overflow-hidden"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            top: "45%",
-            zIndex: 25,
+            zIndex: 20,
+            clipPath:
+              "polygon(0% 38%, 50% 78%, 100% 38%, 100% 100%, 0% 100%)",
             background:
               "linear-gradient(140deg, #f3e5cf 0%, #e2c891 50%, #c9a564 100%)",
+            boxShadow: "inset 0 6px 14px rgba(120,80,30,0.25)",
           }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none opacity-50"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(120,80,30,0.25) 0%, transparent 35%, rgba(120,80,30,0.35) 100%)",
-            }}
-          />
-        </div>
+        />
 
         <div
           className="absolute inset-x-0 top-0 origin-top transition-transform [transition-duration:800ms] ease-in-out"
           style={{
-            height: "55%",
+            height: "78%",
             transformStyle: "preserve-3d",
             transform: open ? "rotateX(-180deg)" : "rotateX(0deg)",
-            zIndex: open ? 15 : 30,
+            zIndex: open ? 5 : 30,
           }}
         >
           <div
@@ -99,19 +109,21 @@ export function RoyalWaxSealCard({ data }: Props) {
             style={{
               clipPath: "polygon(0 0, 100% 0, 50% 100%)",
               background:
-                "linear-gradient(160deg, #e9d3a9 0%, #d4b576 50%, #b8954c 100%)",
-              boxShadow: "inset 0 -4px 12px rgba(120,80,30,0.4)",
+                "linear-gradient(160deg, #e9d3a9 0%, #d4b576 55%, #b8954c 100%)",
+              boxShadow: "inset 0 -6px 14px rgba(120,80,30,0.4)",
+              backfaceVisibility: "hidden",
             }}
           />
           <div
             className="absolute left-1/2 w-20 h-20 rounded-full flex items-center justify-center"
             style={{
-              top: "55%",
+              top: "72%",
               transform: "translate(-50%, -50%)",
               background:
                 "radial-gradient(circle at 35% 30%, #c93a4f 0%, #8b1d2c 45%, #4a0a16 100%)",
               boxShadow:
                 "inset -3px -5px 10px rgba(0,0,0,0.5), inset 3px 4px 8px rgba(255,255,255,0.15), 0 6px 14px rgba(0,0,0,0.4)",
+              backfaceVisibility: "hidden",
             }}
           >
             <span

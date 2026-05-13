@@ -9,6 +9,7 @@ import {
   ArtDecoCard,
   BohoTerracotaCard,
   PolaroidScrapbookCard,
+  BeachWeddingCard,
   sampleInvitation,
 } from "@/components/invitations";
 
@@ -76,6 +77,13 @@ const templates = [
       "Stack de tres polaroids con cinta washi. Al tocar se abren en abanico revelando recuerdos y detalles del evento.",
     Component: PolaroidScrapbookCard,
   },
+  {
+    id: "beach",
+    name: "Boda en la Playa",
+    description:
+      "Atardecer costero con hojas de palmera que se mecen, sol palpitando, olas en movimiento, una estrella y una concha de mar. Hecha para celebraciones frente al océano.",
+    Component: BeachWeddingCard,
+  },
 ];
 
 export default function Invitations() {
@@ -93,7 +101,7 @@ export default function Invitations() {
             Plantillas de Invitación
           </h1>
           <p className="font-display italic text-lg text-muted-foreground max-w-2xl mx-auto">
-            Nueve estilos distintos con animaciones encantadoras. Pasa el cursor
+            Diez estilos distintos con animaciones encantadoras. Pasa el cursor
             o tócalas para descubrir el efecto de cada una.
           </p>
         </header>

@@ -7,5 +7,6 @@ export { WatercolorCard } from "./WatercolorCard";
 export { ArtDecoCard } from "./ArtDecoCard";
 export { BohoTerracotaCard } from "./BohoTerracotaCard";
 export { PolaroidScrapbookCard } from "./PolaroidScrapbookCard";
+export { BeachWeddingCard } from "./BeachWeddingCard";
 export type { InvitationData } from "./types";
 export { sampleInvitation } from "./types";
