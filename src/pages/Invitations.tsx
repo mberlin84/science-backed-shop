@@ -10,6 +10,11 @@ import {
   BohoTerracotaCard,
   PolaroidScrapbookCard,
   BeachWeddingCard,
+  SunsetHorizonCard,
+  UnderwaterPearlCard,
+  TropicalHibiscusCard,
+  MessageInBottleCard,
+  CoastalMinimalCard,
   sampleInvitation,
 } from "@/components/invitations";
 
@@ -84,6 +89,41 @@ const templates = [
       "Atardecer costero con hojas de palmera que se mecen, sol palpitando, olas en movimiento, una estrella y una concha de mar. Hecha para celebraciones frente al océano.",
     Component: BeachWeddingCard,
   },
+  {
+    id: "sunset",
+    name: "Atardecer en el Horizonte",
+    description:
+      "Cielo púrpura-coral con un sol enorme hundiéndose en el mar y su reflejo titilante sobre el agua. Palmeras en silueta y aves cruzando el horizonte.",
+    Component: SunsetHorizonCard,
+  },
+  {
+    id: "underwater",
+    name: "Perla Submarina",
+    description:
+      "Vista desde el fondo del océano: rayos de luz atravesando el agua, burbujas ascendiendo sin pausa, algas meciéndose y una perla que palpita dentro de su concha.",
+    Component: UnderwaterPearlCard,
+  },
+  {
+    id: "tropical",
+    name: "Hibisco Tropical",
+    description:
+      "Explosión floral con hibiscos enormes, hojas de monstera y palette coral-fucsia-amarillo. Las flores rotan despacio sobre fondo cálido de papel tropical.",
+    Component: TropicalHibiscusCard,
+  },
+  {
+    id: "bottle",
+    name: "Mensaje en una Botella",
+    description:
+      "Botella de cristal flotando sobre un mapa antiguo, con rosa de los vientos y ancla. Al tocar, el corcho salta y el pergamino se despliega revelando los detalles.",
+    Component: MessageInBottleCard,
+  },
+  {
+    id: "coastal-minimal",
+    name: "Costa Minimalista",
+    description:
+      "Editorial y respirable: papel granulado, una sola línea que se vuelve onda animada con stroke-dasharray, palma trazada y una concha contorneada. Aire de revista costera.",
+    Component: CoastalMinimalCard,
+  },
 ];
 
 export default function Invitations() {
@@ -101,8 +141,8 @@ export default function Invitations() {
             Plantillas de Invitación
           </h1>
           <p className="font-display italic text-lg text-muted-foreground max-w-2xl mx-auto">
-            Diez estilos distintos con animaciones encantadoras. Pasa el cursor
-            o tócalas para descubrir el efecto de cada una.
+            Quince estilos distintos con animaciones encantadoras. Pasa el
+            cursor o tócalas para descubrir el efecto de cada una.
           </p>
         </header>
 
