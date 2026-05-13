@@ -5,6 +5,10 @@ import {
   StarryNightCard,
   VintagePostcardCard,
   HolographicModernCard,
+  WatercolorCard,
+  ArtDecoCard,
+  BohoTerracotaCard,
+  PolaroidScrapbookCard,
   sampleInvitation,
 } from "@/components/invitations";
 
@@ -44,6 +48,34 @@ const templates = [
       "Tarjeta minimalista con gradiente iridiscente y tilt 3D que sigue al cursor para un efecto holográfico vivo.",
     Component: HolographicModernCard,
   },
+  {
+    id: "watercolor",
+    name: "Acuarela",
+    description:
+      "Manchas de acuarela suaves sobre papel con textura de grano. Al pasar el cursor, los pigmentos respiran y se expanden delicadamente.",
+    Component: WatercolorCard,
+  },
+  {
+    id: "artdeco",
+    name: "Art Deco",
+    description:
+      "Geometría dorada simétrica sobre verde esmeralda al estilo años 20: abanicos, marcos finos y un destello que recorre la tarjeta al hover.",
+    Component: ArtDecoCard,
+  },
+  {
+    id: "boho",
+    name: "Boho Terracota",
+    description:
+      "Paleta tierra con ramas de eucalipto y pampas grass que se mecen con keyframes suaves. Calidez de desierto.",
+    Component: BohoTerracotaCard,
+  },
+  {
+    id: "polaroid",
+    name: "Polaroid Scrapbook",
+    description:
+      "Stack de tres polaroids con cinta washi. Al tocar se abren en abanico revelando recuerdos y detalles del evento.",
+    Component: PolaroidScrapbookCard,
+  },
 ];
 
 export default function Invitations() {
@@ -61,7 +93,7 @@ export default function Invitations() {
             Plantillas de Invitación
           </h1>
           <p className="font-display italic text-lg text-muted-foreground max-w-2xl mx-auto">
-            Cinco estilos distintos con animaciones encantadoras. Pasa el cursor
+            Nueve estilos distintos con animaciones encantadoras. Pasa el cursor
             o tócalas para descubrir el efecto de cada una.
           </p>
         </header>

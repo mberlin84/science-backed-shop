@@ -18,7 +18,7 @@ export function VintagePostcardCard({ data }: Props) {
         aria-label={flipped ? "Ver el frente" : "Ver el reverso"}
       >
         <div
-          className="absolute inset-0 transition-transform duration-[900ms] ease-in-out"
+          className="absolute inset-0 transition-transform [transition-duration:900ms] ease-in-out"
           style={{
             transformStyle: "preserve-3d",
             transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",

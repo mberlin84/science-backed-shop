@@ -86,7 +86,7 @@ export function RoyalWaxSealCard({ data }: Props) {
         </div>
 
         <div
-          className="absolute inset-x-0 top-0 origin-top transition-transform duration-[800ms] ease-in-out"
+          className="absolute inset-x-0 top-0 origin-top transition-transform [transition-duration:800ms] ease-in-out"
           style={{
             height: "55%",
             transformStyle: "preserve-3d",
